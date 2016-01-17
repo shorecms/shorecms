@@ -81,12 +81,13 @@ body {
         color: #999;
     }
 
-form {
-    padding: 16px;
-}
+/*form {*/
+    /*padding: 16px;*/
+/*}*/
 
     .mdl-textfield {
-        width: 100%;
+        width: auto;
+        max-width: 100%;
         float: left;
         clear: both;
     }

@@ -1,28 +1,24 @@
-{% extends 'CoreBundle::admin.html.twig' %}
+{% extends 'CoreBundle:layout:2col.html.twig' %}
 
 {%  block header %}
     Create a user
 {% endblock %}
 
-{% block body %}
+{% block main %}
 
-    <div class="mdl-grid">
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <footer class="form__buttons">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Create</button>
+    </footer>
+    {{ form_end(form) }}
 
-        <nav class="page-nav mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-            <ul>
-                <li>
-                    <a href="{{ path('user_index') }}"><i class="material-icons" role="presentation">arrow_back</i>Back to users</a>
-                </li>
-            </ul>
-        </nav>
+{% endblock %}
 
-        <div class="page-main mdl-cell mdl-cell--9-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--white mdl-shadow--2dp">
-            {{ form_start(form) }}
-            {{ form_widget(form) }}
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Create</button>
-            {{ form_end(form) }}
-        </div>
-
-    </div>
-
+{% block nav %}
+    <ul>
+        <li>
+            <a href="{{ path('user_index') }}"><i class="material-icons" role="presentation">arrow_back</i>Back to users</a>
+        </li>
+    </ul>
 {% endblock %}

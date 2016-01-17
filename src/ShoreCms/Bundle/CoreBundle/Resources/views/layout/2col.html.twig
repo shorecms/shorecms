@@ -1,0 +1,21 @@
+{% extends 'CoreBundle:layout:admin.html.twig' %}
+
+{%  block header %}
+    Create a user
+{% endblock %}
+
+{% block inner_body %}
+
+    <div class="mdl-grid">
+
+        <nav class="page-nav mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+            {% block nav %}{% endblock %}
+        </nav>
+
+        <section class="page-main mdl-cell mdl-cell--9-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--white mdl-shadow--2dp">
+            {% block main %}{% endblock %}
+        </section>
+
+    </div>
+
+{% endblock %}

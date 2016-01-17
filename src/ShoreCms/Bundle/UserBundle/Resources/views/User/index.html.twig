@@ -1,57 +1,52 @@
-{% extends 'CoreBundle::admin.html.twig' %}
+{% extends 'CoreBundle:layout:2col.html.twig' %}
 
 {%  block header %}
     Users
 {% endblock %}
 
-{% block body %}
+{% block main %}
 
-    <div class="mdl-grid">
+    <table class="mdl-data-table mdl-js-data-table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th class="mdl-data-table__cell--non-numeric">Name</th>
+                <th class="mdl-data-table__cell--non-numeric">Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
+                <td class="mdl-data-table__cell--non-numeric">{{ user.name }}</td>
+                <td class="mdl-data-table__cell--non-numeric">{{ user.email }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('user_show', { 'id': user.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('user_edit', { 'id': user.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {%  else %}
+            <tr>
+                <td colspan="4" class="no-data">There are no users yet</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-        <nav class="page-nav mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-            <ul>
-                <li>
-                    <a href="{{ path('user_new') }}"><i class="material-icons" role="presentation">add</i>Create a user</a>
-                </li>
-            </ul>
-        </nav>
+{% endblock %}
+{% block nav %}
 
-        <div class="page-main mdl-cell mdl-cell--9-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--white mdl-shadow--2dp">
-            <table class="mdl-data-table mdl-js-data-table">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th class="mdl-data-table__cell--non-numeric">Name</th>
-                        <th class="mdl-data-table__cell--non-numeric">Email</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {% for user in users %}
-                    <tr>
-                        <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
-                        <td class="mdl-data-table__cell--non-numeric">{{ user.name }}</td>
-                        <td class="mdl-data-table__cell--non-numeric">{{ user.email }}</td>
-                        <td>
-                            <ul>
-                                <li>
-                                    <a href="{{ path('user_show', { 'id': user.id }) }}">show</a>
-                                </li>
-                                <li>
-                                    <a href="{{ path('user_edit', { 'id': user.id }) }}">edit</a>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
-                {%  else %}
-                    <tr>
-                        <td colspan="4" class="no-data">There are no users yet</td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        </div>
-
-    </div>
+    <ul>
+        <li>
+            <a href="{{ path('user_new') }}"><i class="material-icons" role="presentation">add</i>Create a user</a>
+        </li>
+    </ul>
 
 {% endblock %}
