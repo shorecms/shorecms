@@ -1,0 +1,28 @@
+{% extends 'CoreBundle::admin.html.twig' %}
+
+{% block body %}
+
+    <div class="page-header mdl-color--deep-orange-600 mdl-color-text--white">
+        <h1 class="mdl-typography--display-2">Create a user</h1>
+    </div>
+
+    <div class="mdl-grid">
+
+        <nav class="page-nav mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+            <ul>
+                <li>
+                    <a href="{{ path('user_index') }}"><i class="material-icons" role="presentation">arrow_back</i>Back to users</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="page-main mdl-cell mdl-cell--9-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--white mdl-shadow--2dp">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Create</button>
+            {{ form_end(form) }}
+        </div>
+
+    </div>
+
+{% endblock %}

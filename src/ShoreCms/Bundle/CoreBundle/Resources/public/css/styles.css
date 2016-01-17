@@ -1,0 +1,97 @@
+body {
+    background: #78909c;
+}
+
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+    .login .mdl-textfield input {
+        width: 100%;
+    }
+
+.mdl-layout__drawer .mdl-layout-title {
+    border-bottom: solid 1px #37474f;
+}
+
+.mdl-layout__drawer-button i {
+    color: #263238;
+}
+
+.mdl-navigation__link i {
+    margin-right: 10px;
+    vertical-align: bottom;
+}
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
+    background-color: #37474f;
+}
+
+.page-header {
+    padding: 0 40px;
+    overflow: hidden;
+}
+
+@media (min-width: 840px) {
+
+    .page-header {
+        padding-bottom: 70px;
+    }
+
+    .page-main {
+        margin-top: -70px;
+    }
+
+}
+
+.page-nav ul {
+    padding: 0 20px;
+    list-style: none;
+}
+
+    .page-nav li {
+        padding: 5px 0;
+        border-bottom: solid 1px #ccc;
+    }
+
+    .page-nav a {
+        padding: 5px;
+        display: block;
+        text-decoration: none;
+    }
+
+    .page-nav a:hover {
+        background-color: #eee;
+    }
+
+    .page-nav i {
+        margin-right: 10px;
+        vertical-align: bottom;
+    }
+
+.mdl-data-table {
+    width: 100%;
+}
+
+    .mdl-data-table td.no-data {
+        text-align: center;
+        color: #999;
+    }
+
+form {
+    padding: 16px;
+}
+
+    .mdl-textfield {
+        width: 100%;
+        float: left;
+        clear: both;
+    }
+
+    .mdl-textfield input {
+        width: auto;
+        max-width: 100%;
+    }

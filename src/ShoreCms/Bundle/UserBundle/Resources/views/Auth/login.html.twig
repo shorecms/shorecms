@@ -1,0 +1,30 @@
+{% extends 'CoreBundle::base.html.twig' %}
+
+{% block wrapper %}
+
+    <div class="mdl-card mdl-shadow--2dp login">
+
+        {% if error %}
+            <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        <form action="{{ path('login_check') }}" method="post">
+
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="_username" name="_username" value="{{ last_username }}">
+                <label class="mdl-textfield__label" for="_username">Username</label>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="password" id="_password" name="_password">
+                <label class="mdl-textfield__label" for="_password">Password</label>
+            </div>
+
+
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Login</button>
+
+        </form>
+
+    </div>
+
+{% endblock %}

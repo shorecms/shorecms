@@ -1,0 +1,33 @@
+{% extends 'CoreBundle::admin.html.twig' %}
+
+{% block body %}
+
+    <div class="page-header mdl-color--deep-orange-600 mdl-color-text--white">
+        <h1 class="mdl-typography--display-2">Edit user</h1>
+    </div>
+
+    <div class="mdl-grid">
+
+        <nav class="page-nav mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+            <ul>
+                <li>
+                    <a href="{{ path('user_index') }}"><i class="material-icons" role="presentation">arrow_back</i>Back to users</a>
+                </li>
+                <li>
+                    {{ form_start(delete_form) }}
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Delete user</button>
+                    {{ form_end(delete_form) }}
+                </li>
+            </ul>
+        </nav>
+
+        <div class="page-main mdl-cell mdl-cell--9-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--white mdl-shadow--2dp">
+            {{ form_start(edit_form) }}
+            {{ form_widget(edit_form) }}
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Save</button>
+            {{ form_end(edit_form) }}
+        </div>
+
+    </div>
+
+{% endblock %}

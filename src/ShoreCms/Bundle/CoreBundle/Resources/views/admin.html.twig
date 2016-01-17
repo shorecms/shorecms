@@ -1,0 +1,38 @@
+{% extends 'CoreBundle::base.html.twig' %}
+
+{% block wrapper %}
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-color--white mdl-color-text--blue-grey">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">{{ site_title }}</span>
+                <div class="mdl-layout-spacer"></div>
+                {% if app.user %}
+                    {{ app.user.username }}
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+                        <i class="material-icons">arrow_drop_down</i>
+                    </button>
+                    <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+                        <li class="mdl-menu__item mdl-js-ripple-effect"><a href="{{ url('logout') }}">Log out</a></li>
+                    </ul>
+                {% endif %}
+            </div>
+        </header>
+        <div class="mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+            <span class="mdl-layout-title">Shore CMS</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link mdl-color-text--blue-grey-100" href="{{ path('dashboard') }}">
+                    <i class="material-icons" role="presentation">dashboard</i>Dashboard
+                </a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content mdl-color--grey-100">
+            <div class="page-content">
+
+                {% block body %}{% endblock %}
+
+            </div>
+        </main>
+    </div>
+
+{% endblock %}

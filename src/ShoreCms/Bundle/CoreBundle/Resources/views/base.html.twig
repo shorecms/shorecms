@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Edit {% endblock %} | {{ site_title }} | Shore CMS</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/core/css/material.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/core/css/styles.css') }}" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" type="text/css">
+    {% block stylesheets %}{% endblock %}
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+</head>
+<body>
+
+    {% block wrapper %}{% endblock %}
+
+    <script src="{{ asset('bundles/core/js/material.min.js') }}"></script>
+    {% block javascripts %}{% endblock %}
+
+</body>
+</html>
